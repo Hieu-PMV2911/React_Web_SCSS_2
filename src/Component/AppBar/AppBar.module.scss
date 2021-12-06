@@ -1,0 +1,146 @@
+@import '../../Styles/variables.scss';
+
+.appbar__container{
+	width: $appbarwidth;
+	height: 100%;
+	position: fixed;
+	z-index: 999;
+
+	&.light__mode{
+		border-right: 1px solid $dividerLineLight;
+		background: $white;
+	}
+	&.dark__mode{
+		border-right: 1px solid $dividerLine;
+		background: $dark;
+	}
+}
+
+.appbar{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 40px 0;
+
+	.appbar__logo{
+		display: flex;
+		width: 170px;
+		height: 42px;
+		margin-bottom: 40px;
+
+		.appbar__logo__rect{
+			width: 32px;
+			height: 32px;
+			background: linear-gradient(180deg, #33c863 0%, #51ed83 51.09%, #2cbd5d 100%);
+			margin: 18px 12px 0 0;
+			display: flex;
+			justify-content:center;
+			align-items: center;
+			font-size: 1rem;
+			border-radius: 50px 50px 50px 8px;
+			color: $white;
+		}
+		.light__mode{
+			color: $white;
+		}
+
+		.appbar__logo__title{
+			font-size: 24px;
+			line-height: 30px;
+			letter-spacing: $letterSpacing;
+			font-weight: 800;
+			color: $green;
+			.light__mode{
+				color: $dark;
+			}
+
+			.dark__mode{
+				color: $white;
+			}
+		}
+	}
+	.appbar__menu{
+		width: 100%;
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+
+		li{
+			&:not(:last-child){
+				margin-bottom: 12px;
+			}
+
+			border-left: 4px solid transparent;
+			list-style: none;
+			width: 100%;
+			&.isActive{
+				border-left-color: $green;
+			}
+			
+			.link{
+				text-decoration: none;
+				display: flex;
+				align-items: center;
+				padding: 16px 16px 16px 19px;
+
+				.link__icon{
+					width: 24px;
+					height: 24px;
+					margin: 0 12px 0 0;
+					display: flex;
+					align-items: center;
+				}
+
+				.link__text{
+					font-size: 1rem;
+					font-weight: 600;
+					line-height: 20px;
+					.light__mode{
+						color: $darkGray;	
+					}
+					.dark__mode{
+						color: $white;
+					}
+				}
+			}
+
+			&.isActive .link{
+				.link__text{
+					color: $green;
+				}
+			}
+
+		}
+	}
+	.appbar__divider{
+		margin: 40px 0;
+		width: 100%;
+		height: 1px;
+		.light__mode{
+			background: $dividerLineLight;
+		}
+		.dark__mode{
+			background: $dividerLine;
+		}
+	}
+	.appbar__themetoggler{
+		display: flex;
+		align-items: center;
+		width: 100%;
+		padding: 16px 16px 16px 24px;
+
+		.toggle__title{
+			margin-left: 20px;
+			line-height: 20px;
+			
+			&.light__mode{
+				color: $darkGray;
+			}
+
+			&.dark__mode{
+				color: $white;
+			}
+		}
+	}
+}
+

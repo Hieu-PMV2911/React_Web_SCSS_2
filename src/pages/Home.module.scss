@@ -1,0 +1,60 @@
+@import '../Styles/variables.scss';
+
+.home__container{
+	&.light__mode{
+		background: $white;
+	}
+	&.dark__mode{
+		background: $dark;
+	}
+}
+
+.home{
+	max-width:1920px;
+	margin: 0 auto;
+	@media (max-width: 1300px)
+	{
+		display:none;
+	}
+}
+
+.home__not__page{
+	display: none;
+	@media (max-width: 1300px)
+	{
+		display: block;
+		z-index: 1000;
+		height: 100vh;
+		width: 100%;
+		overflow: hidden;
+
+	}
+	
+	.home__not__page__img{
+		width: 100%;
+		object-fit: cover;
+	}
+	h2{
+		font-size: 45px;
+		color: red;
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.home__page__wave{
+		height: 70%; 
+		overflow: hidden;
+
+		svg{
+			height: 100%;
+			width: 100%;
+			path{
+				stroke: none;
+				fill: rgb(255, 192, 255);
+			}
+		}
+	}
+
+
+}
